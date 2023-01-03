@@ -31,9 +31,23 @@ function setWrittenTime() {
   minute = minuteValue;
   second = secondValue;
 
-  hour.textContent = hr;
-  minute.textContent = min;
-  second.textContent = sec;
+  if (hr < 10) {
+    hour.textContent = "0" + hr;
+  } else {
+    hour.textContent = hr;
+  }
+
+  if (min < 10) {
+    minute.textContent = "0" + min;
+  } else {
+    minute.textContent = min;
+  }
+
+  if (sec < 10) {
+    second.textContent = "0" + sec;
+  } else {
+    second.textContent = sec;
+  }
 }
 
 setInterval(setTime, 1000);
