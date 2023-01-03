@@ -12,6 +12,12 @@ body {
     overflow: hidden;
 }
 
+.written-time {
+    position: absolute;
+    top: 5rem;
+    font-size: 25pt;
+}
+
 .clock {
     width: 40rem;
     height: 40rem;

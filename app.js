@@ -2,6 +2,10 @@ const hourHand = document.querySelector(".hour-hand");
 const minuteHand = document.querySelector(".minute-hand");
 const secondHand = document.querySelector(".second-hand");
 
+const hourValue = document.querySelector("#hour");
+const minuteValue = document.querySelector("#minutes");
+const secondValue = document.querySelector("#seconds");
+
 function setTime() {
   d = new Date(); //object of date()
   hr = d.getHours();
@@ -18,6 +22,22 @@ function setTime() {
   second.style.transform = `rotate(${sec_rotation}deg)`;
 }
 
+function setWrittenTime() {
+  d = new Date();
+  hr = d.getHours();
+  min = d.getMinutes();
+  sec = d.getSeconds();
+  hour = hourValue;
+  minute = minuteValue;
+  second = secondValue;
+
+  hour.textContent = hr;
+  minute.textContent = min;
+  second.textContent = sec;
+}
+
 setInterval(setTime, 1000);
+setInterval(setWrittenTime, 1000);
 
 setTime();
+setWrittenTime();
