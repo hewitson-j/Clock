@@ -14,8 +14,9 @@ body {
 
 .written-time {
     position: absolute;
-    top: 5rem;
+    top: 4rem;
     font-size: 25pt;
+    text-align: center;
 }
 
 .clock {

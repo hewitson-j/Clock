@@ -6,6 +6,10 @@ const hourValue = document.querySelector("#hour");
 const minuteValue = document.querySelector("#minutes");
 const secondValue = document.querySelector("#seconds");
 
+const day = document.querySelector("#day");
+const month = document.querySelector("#month");
+const year = document.querySelector("#year");
+
 function setTime() {
   d = new Date(); //object of date()
   hr = d.getHours();
@@ -50,8 +54,48 @@ function setWrittenTime() {
   }
 }
 
+function setDate() {
+  date = new Date();
+  d = date.getDate();
+  m = date.getMonth();
+  y = date.getFullYear();
+
+  day.textContent = d;
+  year.textContent = y;
+
+  var monthMap = [
+    "January",
+    "Febrauary",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  month.textContent = monthMap[m];
+
+  // console.log(m);
+
+  // switch (m) {
+  //   case m === 0:
+  //     month.textContent = "January";
+  //     break;
+  // default:
+  //   month.textContent = "Wrong";
+  //   break;
+  // }
+}
+
 setInterval(setTime, 1000);
 setInterval(setWrittenTime, 1000);
+setInterval(setDate, 100000);
 
 setTime();
 setWrittenTime();
+setDate();
